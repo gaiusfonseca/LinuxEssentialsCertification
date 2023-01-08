@@ -1,0 +1,72 @@
+Topic 2 - Finding your way on a Linux System
+
+Guided Exercises
+
+1. Use the man command to findo out what each command does:
+
+ls - lists the content of a directory
+cat - concatenates files and print them on sysout
+cut - removes sections from each line of files
+cd - changes the current directory to the speciefied directory
+cp - copies files or directories
+mv - moves ou rename files
+mkdir - creates directories
+touch - updates the last modified time of a file or create a file if it doesn't exist
+wc - print a set of data for each file
+passwd - update user authentication token (password)
+rm - deletes files or directories
+rmdir - deletes empty directories
+more - provides text viewing one screen at a time
+less - an improved more command
+whereis - locates the binary, source and mand pages for a command
+head - prints on sysout the first ten lines of a file
+tail - prints on sysout the last ten lines of a file
+sort - prints on sysout the sorted lines of a concatenation of a set of files
+tr - translate or delete characters
+chmod - changes the bits that controls the file access (reading, editing, executing and delete)
+grep - print the lines that matches a pattern
+
+
+2. Open the ls info page and identify the MENU.
+
+- What options do you have?
+
+	- Which files are listed
+	- Sorting the output
+	- General output formatting
+	- Formatting file timestamps
+	- Formatting the file names
+
+
+- Find the option that allows you to sort the output by modification time
+
+	- Sorting the output
+	
+
+3.Display the path to the first 3 README files. Use the man command to identify the correct option for locate.
+
+"locate --limit 3 README"
+"/etc/fonts/conf.d/README"
+"/etc/fwupd/bios-settings.d/README.md"
+"/etc/httpd/conf.d/README"
+
+
+4. Create a file called test in your home directory. Find its absolute path with locate command.
+
+"touch ~/test"
+
+#since the search is executed on a database that is updated from time to time, it is required to force an update in order to the file recently created to be shown
+"sudo updatedb"
+
+"locate ~/test"
+
+
+5. Did you find it immediatelly? What did you have to do in order for locate to find it?
+
+#since the search is executed on a database that is updated from time to time, it is required to force an update in order to the file recently created to be shown
+"sudo updatedb"
+
+
+6. Search for the test file that you previously created, using the find command. What sysntax did you use and what is the absolute path?
+
+"find ~ -maxdepth 1 -name test -print"

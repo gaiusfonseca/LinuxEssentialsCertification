@@ -1,0 +1,27 @@
+Topic 2.3 - Listing Directories and Listing Files - Lesson 2
+
+Guided Exercises
+
+1. use the following file structure to answer the following three questions:
+
+...
+
+a) What command will navigate into the network directory regardless of your current location?
+"$ cd /etc/network"
+
+b) What command can user enter to navigate into their Documents directory from /etc/udev? Use the shortest possible path.
+"$ cd ~/Documents"
+
+c) What command can user enter to navigate into michael's Music directory? Use the shortest possible path.
+"$ cd ~michael/Music"
+
+
+2) Consider the followwing output of ls -lh to answer the next two questions. Note that directories are indicated with a d at the beginning of the line.
+
+...
+
+a) When you run the command ls -lrS what file will be at the beginning?
+scary.jpg
+
+b) Please describe what you expect to see as the output for ls -ad */.
+show all subdirectories, hidden or not

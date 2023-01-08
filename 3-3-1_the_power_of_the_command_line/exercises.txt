@@ -1,0 +1,94 @@
+Topic 3.3 - Lesson 1 - The Power of the Command Line
+
+Guided Exercises
+
+1. The user types the following to their shell:
+
+$ PATH=~/scripts
+ls
+
+What has the user done?
+
+The user has overwritten the PATH environment variable, the only directory in which the commands will be searched for will be ~/scritps. That's why the ls command was not found.
+
+What command will combine the current value of PATH with the new directory ~/scripts?
+
+$ PATH=$PATH:~/scripts
+
+
+2. Consider the following script. Notice that it is using elif to check for a second condition:
+
+> /!bin/bash
+> fruit1 = Apples
+> fruit2 = Oranges
+if [ $1 - lt $# ]
+then
+	echo "This is like comparing $fruit1 and $fruit2!"
+> elif [$1 -gt $2]
+then
+> 	echo '$fruit1 win!'
+else
+> 	echo "Fruit2 win!"
+> done
+
+The lines marked with a > contain errors. Fix the errors.
+
+#!/bin/bash
+fruit1="Apples"
+fruit2="Oranges"
+if [ $1 -lt $# ]
+then
+	echo "This is like comparing $fruit1 and $fruit2!"
+elif [ $1 -gt $2 ]
+then
+	echo "$fruit1 win!"
+else
+	echo "$fruit2 win!"
+fi
+
+
+3. What will the output be in the following situations?
+
+a) $ ./duided1.sh 3 0
+"Apples win!"
+
+b) $ ./guided1.sh 2 4
+"Oranges win!"
+
+c) $ ./guided1.sh 0 1
+"This is like comparing Apples and Oranges"
+
+Explorational Exercises
+
+1. Write a simple script that will check if exactly two arguments are passed. If so, print the arguments in reverse order. Consider this example (note: your code may look differen tha this, but should lead to the same output):
+
+Example:
+if [ $1 == $number ]
+then
+  echo "True!"
+if
+
+Solution:
+if [ $# -eq 2 ]
+then
+  echo "Argument 2 is: $2."
+  echo "Argument 1 is: $1."
+else
+  echo "Number of arguments is not equal to 2."
+fi
+
+2. This code is correct, but it is not a number comparison. Use an internet search to discover how this code is different from using -eq
+The "==" is used to compare two strings, so as it is encolsed within square brackets the shell understands it as a glob expression.
+
+3. There is an environment variable that will print the current directory. Use env to discover the name of this variable.
+the environment variable that holds the current directory path is PWD.
+
+4. Using what you have learned in questions 2 and 3, write a short script that accepts an argument. If an argument is passed, check if that argument matches the name of the current directory. If so, print yes. Otherwise, print no.
+
+#!/bin/bash
+if [ $1 == "$PWD" ]
+then
+    echo "yes"
+else
+    echo "no"
+fi
