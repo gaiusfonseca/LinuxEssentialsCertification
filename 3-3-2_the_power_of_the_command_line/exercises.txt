@@ -1,0 +1,49 @@
+Read the contents of script1.sh below:
+
+#!/bin/bash
+
+if [ $# -lt 1 ]
+then
+  echo "This script requires at least 1 argument."
+  exit 1
+fi
+
+echo $1 | grep "^[A-Z]$" > /dev/null
+if [ $? -ne 0 ]
+then
+  echo "no cake for you!"
+  exit 2
+if
+
+echo "here's your cake!"
+exit 0
+
+What is the output of these commands?
+a) ./script1.sh
+output: "This script requires at least 1 argument."
+
+b) echo $?
+output: 1
+
+c) ./script1.sh cake
+output: no cake for you!
+
+d) echo $?
+output: 2
+
+e) ./script1.sh CAKE
+output: "here's your cake!"
+
+f) echo $?
+output: 0
+
+2. Read the contents of file script2.sh
+
+#!/bin/bash
+for filename in $1/*.txt
+do
+  cp $filename $filename.bak
+done
+
+Describe the purpose of this script as you understand it.
+This is a backup script, it checks for all files with the '.txt' extension in the path passed as the first argument and  create a backup file with the '.bak' extension.
