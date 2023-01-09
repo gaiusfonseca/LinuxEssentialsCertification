@@ -1,0 +1,37 @@
+Guided Execises
+
+1. Which project makes up the common component of all Linux distributions?
+Cento OS. False
+Red Hat. False
+Linux Kernel. True
+CoreOS. False
+
+2. Which operating system is reported in use for macOS from Apple?
+Darwin
+
+3. How does a Linux distribution differ from the Linux Kernel?
+a) The kernel is part of a distribution, the distrinbution as applications to surround the kernel to make it useful. True
+
+b) The Kernel is the Linux Distribution. False.
+
+c) All distributions that use the same kernel are the same. False.
+
+4. Which of the following is a desktop environment in Linux?
+Mint. False, it is a distribution
+Elementary. False, it is a distribution
+Zorin. False, it is a distribution
+Wayland. True.
+
+5. Which component of an operating system allows access to hardware?
+Drivers. True
+Shells. False
+Service. False
+Application. False
+
+Explorational Exercises
+
+1. Retrieve the current Kernel release of yout Linux if you have access to the commnad line.
+$ uname -r
+
+2. using your preferred search engine locate and identify public cloud providers available to you. These could include AWS, Google Cloud, Rackspace and many more. Choose one and see wich operating systems are available to deploy.
+Google Cloud seems to provide standar Linux or Windows virtual machines, but it also allows to use and image of your own.
