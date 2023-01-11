@@ -1,0 +1,48 @@
+Guided Exercises
+
+1. Describe these terms:
+a) Processor
+A general term that applies to any type of processors. Often used incorrectly as a synonym of CPU
+
+b) CPU
+CPU or Central Processing Unit is a specific type of processor and usually refers to CPU cores. All CPUs are Processors but not all Processors are CPUs. CPUs are intended for general purpose computational tasks.
+
+c) GPU
+GPU or Graphics Processing Unit is an specific kind of processor used to deal with graphics. It is not a CPU but is a processor.
+
+2. If you are primarily running video editing applications (a computationally intensive activity) which components and characteristics would you expect to have the most impact on system usability:
+a) CPU Cores. True
+b) CPU speed. True
+c) Available system memory. True
+d) Storarge System. True
+e) GPU. False
+f) Video Display. False
+g) None of the above. False
+
+3. What would you expect the name of the device file in /dev to be for partition 3 of the third SATA drive in a system:
+a) sd3p3. False
+b) sdcp3. False
+c) sdc3. True
+d) None of the above. False
+
+Explorational Exercises
+
+1. run the lsblk command on your system. Identify the parameters below. If a system is not immediately available, consider the lsblk -f listing for the Raspberry Pi system mentioned in the "Storage" section above:
+
+a) The type of devices and how many
+I have three devices on my system: sda, sdb and nvme
+
+b) The partition structure of each device
+disk 1 (sda) has four partitions, disk 2 has three partitions and nvme has one partition.
+
+c) The type of file system and mount for each partition
+sda1 vfat
+sda2 raw
+sda3 ntfs
+sda4 ntfs
+
+sdb1 vfat
+sdb2 ext4
+sdb3 btrfs
+
+nvme0n1p1 ntfs
