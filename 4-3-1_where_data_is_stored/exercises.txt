@@ -1,0 +1,48 @@
+Topic 4.3 - Lesson 1 - Where Data is Stored
+
+Guided Exercises
+
+1. Use the which program to find out the location of the following programs and complete the table:
+
+Program		which command		Path to Executable		User needs root privileges?
+swapon		which swapon		/usr/sbin/swapon		no
+kill		which kill		/usr/bin/kill			no
+cut		which cut		/usr/bin/cut			no
+usermod		which usermod		/usr/sbin/usermod		no
+cron		which cron		cron seem not installed		n/a
+ps		which ps		/usr/bin/ps			no
+
+2. Where are the following files to be found?
+File		/etc		~
+.bashrc				X
+bash.bashrc	X		
+passwd		X		
+.profile			X		
+resolv.conf	X		
+sysctl.conf	X		
+
+3. Explain the meaning of the number elements for kernel file vmlinuz-4.15.0-50-generic found in /boot
+The number element 4.15.0-50 refers the version of the kernel.
+
+4. What command would you use to list all hard drives and partitions in /dev?
+ls -al /dev/sd*
+
+
+Explorational Exercises
+
+1. Device files for hard drives are represented based on the controllers they use - we saw /dev/sd* for drives using SCSI (Small Computer System Interface) and SATA (Serial Advanced Technology Attachment), but:
+
+a) How were old IDE (Integrated Drive Electronics) drives represented?
+Old IDE drives are represented with the prefix 'hd'
+
+b) And modern NVMe (Non-Volatile memory Express) drives?
+NVMe are represented with the prefix nvme
+
+2. Take a look at the file /proc/meminfo. Compare the contents of this file to the output of the command free and identify which key from /proc/meminfo correspond to the following fields in the output of free:
+
+free output		/proc/meminfo field
+total			MemTotal + SwapTotal
+free			MemFree + SwapFree
+shared			Shmem	
+buff/cache		Buffers + Cached + SReclaimable
+available		MemAvailable
