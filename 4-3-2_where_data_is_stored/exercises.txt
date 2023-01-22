@@ -1,0 +1,94 @@
+Topic 4.3 - Lesson 2
+
+Guided Exercises
+
+1. Have a look at the following listin of top and answer the following questions:
+
+a) Which processes have been started by user carol?
+PID 887 was started by user carol, she issued the command top
+
+b) What virtual directory of /proc should you visit to search for data regarding the top command?
+If I want more details about this process i should check /proc/887
+
+c) What process was run first? How can you tell?
+systemd was the first process and we can say that by checking the PID
+
+d) Complete the table specifying in what area of top output the following information is found:
+
+		Summary Area	Task Area
+Memory		X		X
+Swap		X
+PID				X
+CPU Time	X		X
+Commands			X
+
+2. What command is used to read the followiung binary logs?
+a) /var/log/wtmp
+last
+
+b) /var/log/btmp
+lastb
+
+c) /run/log/journal/2a7d9730cd3142f4b15e20d6be631836/system.journal
+journalctl
+
+3. In combination with grep, what commands would you use to dinf out the following information about your Linux system?
+a) Whe the system was last rebooted (wtmp)?
+last /var/log/wtmp
+
+b) Which hard disks are installed (kern.log)?
+less /var/log/kern.log
+
+c) When the last login occurred (auth.log)?
+tail /var/log/auth.log
+
+4. What two commands would you use to have the kernel ring buffer displayed?
+dmesg
+journalctl -k or journalctl --dmesg
+
+5. Indicate where the following log messages belong:
+
+a) Jul 10 13:37:39 debian dbus[303]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+/var/log/syslog
+
+b) Jul 10 11:23:58 debian kernel: [ 1.923349] usbhid: USB HID core driver
+/var/log/kern.log
+
+c) Jul 10 14:02:53 debian sudo: pam_unix(sudo:session): session opened for user root by carol(uid=0)
+/var/log/auth.log
+
+d) Jul 10 11:23:58 debian NetworkManager[322]: <info> [1562750638.8672] NetworkManager (version 1.6.2) is starting…
+/var/log/messages
+
+6. Have journalctl query information about the following units?
+ssh
+networking
+rsyslog
+cron
+
+Explorational Exercises
+
+1. Reconsider the top output form the guided exercises and answer the following questions:
+
+a) What two steps would you follow to kill the apache web server?
+frist we need to know the process PID, so we issue the ps command:
+$ ps
+
+after checking the PID we can kill it with a kill command:
+$ kill 444
+
+b) In the summary area, how could you display the information about physical memory and swap using progress bars?
+you can isuee a top command and then use 'm' to cycle through the display modes for memory in the system information area.
+
+c) Now, sort the processes by memory usage:
+to sort by memory we can use shift + m.
+
+d) Now that you have memory information displayed in progress bars and progress sorted by memory usage, save these configurations so that you get them as default next time you use top.
+we can use the global option shift + w to write all the changes we have made to the configuration file and use the next time we issue a top command.
+
+e) What file stores top's configuration settings? Where does it live? How can you check for its existence?
+The file that stores top configuration is '/home/$USER/.config/procps/toprc'.
+
+2. Learn about the command exec in Bash. try to demonstrate its functionality by starting a Bash session, finding the Bash process with ps, then run exec /bin/sh and search for the process with the same PID again.
+exec replaces the current teminal session within the command issued using the same PID the session was running.
+
